@@ -21,4 +21,9 @@ defmodule EctoDelete.DateRange do
 
     |> foreign_key_constraint(:timetable, name: :date_range_slots_date_range_id_fkey, message: "You can't delete this date range. You have checks")
   end
+
+  def delete_changeset(struct_or_changeset) do
+    struct_or_changeset
+    |> foreign_key_constraint(:timetable, name: :date_range_slots_date_range_id_fkey, message: "You can't delete this date range. You have checks")
+  end
 end
